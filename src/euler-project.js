@@ -78,6 +78,15 @@ const largestPalindrome = function() {
   return result;
 };
 
+const sumSquareDifference = function(n) {
+  const squareOfsum = Math.pow(n * (n + 1) / 2, 2);
+  const sumOfSquare = n * (n + 1) * (2 * n + 1) / 6;
+
+  return squareOfsum - sumOfSquare;
+};
+
 exports.sumOfMultiples = sumOfMultiples;
+exports.sumSquareDifference = sumSquareDifference;
 exports.largestPrimeFactor = largestPrimeFactor;
 exports.sumOfEvenFiboTerms = sumOfEvenFiboTerms;
+exports.largestPalindrome = largestPalindrome;

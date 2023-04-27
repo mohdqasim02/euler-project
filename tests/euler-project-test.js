@@ -1,6 +1,12 @@
 const {describe, it} = require('node:test');
 const {strictEqual, deepStrictEqual} = require('assert');
-const {sumOfMultiples, sumOfEvenFiboTerms, largestPrimeFactor} = require("../src/euler-project.js");
+const {
+  sumOfMultiples,
+  sumSquareDifference,
+  sumOfEvenFiboTerms, 
+  largestPrimeFactor,
+  largestPalindrome,
+} = require("../src/euler-project.js");
 
 describe('sumOfMultiples', function() {
   it("should give 8 below for sum below 6", function() {
@@ -43,3 +49,15 @@ describe('largestPrimeFactor', function() {
     strictEqual(largestPrimeFactor(600851475143), 6857);
   });
 });
+
+describe("largestPalindrome", function() {
+  it("should give 906609 for three digit products", function() {
+    strictEqual(largestPalindrome(), 906609);
+  });
+})
+
+describe("sumSquareDifference", function() {
+  it("should give 2640 for first ten natural numbers", function() {
+    strictEqual(sumSquareDifference(10), 2640);
+  });
+})
