@@ -47,6 +47,37 @@ const largestPrimeFactor = function(number) {
   return factors.slice(-1).pop();
 };
 
+const isPalindrome = function(number) {
+  let remainingDigits = number;
+  let reversedNumber = 0;
+
+  while (remainingDigits > 0) {
+    reversedNumber = (reversedNumber * 10) + (remainingDigits % 10);
+    remainingDigits = Math.floor(remainingDigits/10);
+  }
+
+  return number === reversedNumber;
+};
+
+const largestPalindrome = function() {
+  let result = 0;
+
+  for(let multiplicant = 999; multiplicant > 100; multiplicant -= 1) {
+    let multiplier = 999;
+    let product = multiplier * multiplicant;
+
+    while(multiplier > 100) {
+      if(isPalindrome(product)) {
+        result = Math.max(result, product);
+      }
+      multiplier -= 1;
+      product = multiplier * multiplicant;
+    }
+  }
+
+  return result;
+};
+
 exports.sumOfMultiples = sumOfMultiples;
 exports.largestPrimeFactor = largestPrimeFactor;
 exports.sumOfEvenFiboTerms = sumOfEvenFiboTerms;
